@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học viện Kỹ thuật Mật mã (KMA)</title>
+    <style>
+        /* Cài đặt chung */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f9;
+        }
+
+        /* Thanh điều hướng */
+        header {
+            background-color: #8b0000; /* Màu đỏ đặc trưng */
+            color: white;
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Phần Banner chính */
+        .hero {
+            background: linear-gradient(rgba(20, 30, 48, 0.85), rgba(139, 0, 0, 0.8)), 
+                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1350&q=80') center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto 25px;
+            color: #e0e0e0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #d4af37;
+            color: #111;
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #f1c40f;
+        }
+
+        /* Khung nội dung chung */
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #8b0000;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #d4af37;
+            margin: 10px auto 0;
+        }
+
+        /* Giới thiệu */
+        .about-box {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .about-box p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* Lưới ngành đào tạo */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 4px solid #8b0000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: #8b0000;
+            margin-bottom: 12px;
+        }
+
+        /* Thông tin liên hệ */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .contact-item h4 {
+            color: #8b0000;
+            margin-bottom: 8px;
+        }
+
+        /* Chân trang */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive cho điện thoại */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Thanh điều hướng -->
+    <header>
+        <div class="logo">HỌC VIỆN KỸ THUẬT MẬT MÃ</div>
+        <nav>
+            <ul>
+                <li><a href="#gioi-thieu">Giới thiệu</a></li>
+                <li><a href="#dao-tao">Đào tạo</a></li>
+                <li><a href="#lien-he">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner chính -->
+    <section class="hero">
+        <h1>Học viện Kỹ thuật Mật mã (KMA)</h1>
+        <p>Trung tâm đào tạo chất lượng cao nguồn nhân lực An toàn thông tin, Công nghệ thông tin và Kỹ thuật điện tử - viễn thông hàng đầu Việt Nam.</p>
+        <a href="#gioi-thieu" class="btn">Tìm hiểu thêm</a>
+    </section>
+
+    <!-- Phần Giới thiệu -->
+    <section id="gioi-thieu" class="container">
+        <h2 class="section-title">Giới Thiệu Chung</h2>
+        <div class="about-box">
+            <p><strong>Học viện Kỹ thuật Mật mã</strong> (tên tiếng Anh: <em>Academy of Cryptography Techniques - ACT</em>) là cơ sở giáo dục đại học công lập trực thuộc Ban Cơ yếu Chính phủ, được thành lập ngày 17/02/1995 trên cơ sở nâng cấp Trường Cán bộ Mật mã.</p>
+            <p>Học viện có chức năng đào tạo cán bộ có trình độ đại học, sau đại học và nghiên cứu khoa học kỹ thuật mật mã của ngành Cơ yếu Việt Nam; đồng thời tham gia đào tạo nguồn nhân lực chất lượng cao phục vụ sự nghiệp công nghiệp hóa, hiện đại hóa đất nước, đặc biệt trong lĩnh vực bảo mật và an toàn thông tin.</p>
+        </div>
+    </section>
+
+    <!-- Phần Ngành đào tạo -->
+    <section id="dao-tao" class="container">
+        <h2 class="section-title">Các Ngành Đào Tạo Trọng Điểm</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>An toàn thông tin</h3>
+                <p>Đào tạo chuyên sâu về mật mã học, an ninh mạng, phòng chống tấn công mạng, phân tích mã độc và bảo vệ hệ thống thông tin trọng yếu.</p>
+            </div>
+            <div class="card">
+                <h3>Công nghệ thông tin</h3>
+                <p>Trang bị kiến thức nền tảng và chuyên sâu về phát triển phần mềm, hệ thống nhúng, trí tuệ nhân tạo, khoa học dữ liệu và quản trị hệ thống.</p>
+            </div>
+            <div class="card">
+                <h3>Kỹ thuật điện tử - viễn thông</h3>
+                <p>Tập trung vào thiết kế vi mạch, hệ thống nhúng, truyền thông số, mạng viễn thông và bảo mật lớp vật lý trong truyền dẫn dữ liệu.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần Liên hệ -->
+    <section id="lien-he" class="container">
+        <h2 class="section-title">Cơ Sở Đào Tạo</h2>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <h4>Trụ sở chính (Hà Nội)</h4>
+                <p>Địa chỉ: Số 141 đường Chiến Thắng, xã Tân Triều, huyện Thanh Trì, Thành phố Hà Nội.</p>
+                <p>Website: actvn.edu.vn</p>
+            </div>
+            <div class="contact-item">
+                <h4>Phân hiệu tại TP. Hồ Chí Minh</h4>
+                <p>Địa chỉ: Số 17A đường Cộng Hòa, Phường 4, Quận Tân Bình, Thành phố Hồ Chí Minh.</p>
+                <p>Website: hcm.actvn.edu.vn</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chân trang -->
+    <footer>
+        <p>&copy; 2026 Trang giới thiệu Học viện Kỹ thuật Mật mã (KMA). Thiết kế phục vụ mục đích học tập.</p>
+    </footer>
+
+</body>
+</html>
